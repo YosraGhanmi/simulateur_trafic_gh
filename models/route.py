@@ -2,7 +2,7 @@ from typing import List
 
 from exception import *
 from .vehicule import Vehicule
-
+from feu_rouge import *
 
 class Route:
     def __init__(self, nom: str, longueur: float, limite_vitesse: float , maxV : int = 10):
@@ -11,6 +11,33 @@ class Route:
         self.limite_vitesse = float(limite_vitesse)
         self.vehicules: List[Vehicule] = []
         self.maxV = maxV
+        self.feurouge = None
+        self.position_feu = None
+
+    
+    def ajouter_feu_rouge(self, feu: FeuRouge, position: float):
+        """
+        Ajoute un feu rouge à une position donnée sur la route.
+        """
+        self.feu_rouge = feu
+        self.position_feu = position
+
+    def update(self, dt=1.0):
+        """
+        Met à jour le feu et le mouvement des véhicules.
+        Si le feu est rouge, les véhicules s'arrêtent avant la position du feu.
+        """
+        if self.feu_rouge:
+            self.feu_rouge.avancer_temps(dt)
+
+        for v in self.vehicules:
+            # Vérifier arrêt devant le feu rouge
+            if self.feu_rouge and self.feu_rouge.etat == "rouge":
+                if v.position < self.position_feu - v.longueur:
+                    v.avancer(dt)
+                # sinon le véhicule s'arrête
+            else:
+                v.avancer(dt)
 
 
     def ajouter_vehicule(self, vehicule: Vehicule):
