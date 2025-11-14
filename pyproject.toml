@@ -1,3 +1,18 @@
+[project]
+name = "simulateur-trafic-gh"
+version = "1.0.3"
+description = ""
+authors = [
+    {name = "Yosr Ghanmi",email = "yosraghanmi23@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pytest (>=9.0.1,<10.0.0)",
+    "pytest-cov (>=7.0.0,<8.0.0)"
+]
+
+
 [build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
