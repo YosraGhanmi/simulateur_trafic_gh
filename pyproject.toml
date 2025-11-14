@@ -1,5 +1,6 @@
 [project]
 package-mode = false
+name = "models"
 version = "1.0.3"
 description = ""
 authors = [
