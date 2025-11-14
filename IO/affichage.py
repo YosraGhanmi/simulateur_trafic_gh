@@ -1,5 +1,5 @@
 from typing import Any
-import pandas as pd
+
 
 
 class Affichage:
@@ -12,11 +12,5 @@ class Affichage:
 
     def tracer_vitesse_moyenne(self, stats):
         """convertit les statistiques brutes en un DataFrame Pandas"""
-        df = pd.DataFrame([
-            {'tour': s['tour'], **s['vm']}
-            for s in stats['vitesses_moyennes']
-        ])
-        for col in df.columns:
-            if col == 'tour':
-                continue
-            
+       
+        
