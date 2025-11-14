@@ -2,7 +2,7 @@ from typing import List
 
 from exception import *
 from .vehicule import Vehicule
-from feu_rouge import *
+from .feu_rouge import *
 
 class Route:
     def __init__(self, nom: str, longueur: float, limite_vitesse: float , maxV : int = 10):
