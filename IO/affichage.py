@@ -1,4 +1,3 @@
-import matplotlib.pyplot as plt
 from typing import Any
 import pandas as pd
 
@@ -20,10 +19,4 @@ class Affichage:
         for col in df.columns:
             if col == 'tour':
                 continue
-            plt.figure()
-            plt.plot(df['tour'], df[col], marker='o')
-            plt.title(f"Vitesse moyenne - Route {col}")
-            plt.xlabel('Tour')
-            plt.ylabel('Vitesse (m/s)')
-            plt.grid(True)
-            plt.show()
+            
