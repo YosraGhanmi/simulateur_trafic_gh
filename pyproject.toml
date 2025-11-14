@@ -1,5 +1,6 @@
 [project]
 name = "simulateur-trafic-gh"
+package-mode = false
 version = "1.0.3"
 description = ""
 authors = [
