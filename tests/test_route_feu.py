@@ -1,7 +1,7 @@
 from models.feu_rouge import *
 from models.route import *
 def test_arret_au_feu_rouge():
-    route = Route("N",longueur=200)
+    route = Route("N",30,longueur=200)
     feu = FeuRouge(cycle=5)
     route.ajouter_feu_rouge(feu, position=50)
 

@@ -5,7 +5,7 @@ from .vehicule import Vehicule
 from .feu_rouge import *
 
 class Route:
-    def __init__(self, nom: str, longueur: float, limite_vitesse: float , maxV : int = 10):
+    def __init__(self, nom: str, longueur: float, limite_vitesse: float = 20 , maxV : int = 10):
         self.nom = nom
         self.longueur = float(longueur)
         self.limite_vitesse = float(limite_vitesse)
