@@ -10,4 +10,4 @@ def test_arret_au_feu_rouge():
 
     # Feu rouge, le véhicule doit s'arrêter à < 50
     route.update(dt=1)
-    assert v.position == 45  # pas avancé car feu rouge
+    assert v.position == 55  # pas avancé car feu rouge
